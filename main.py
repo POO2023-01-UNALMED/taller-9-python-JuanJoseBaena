@@ -4,7 +4,7 @@ from tkinter import Tk, Button, Entry, StringVar, Label
 root = Tk()
 root.title("Calculadora POO")
 root.resizable(0,0)
-root.geometry("400x250")
+root.geometry("400x300")
 
 # Configuración pantalla de salida 
 pantalla = Entry(root, width=40, bg="black", fg="white", borderwidth=0, font=("arial", 18, "bold"))
@@ -31,22 +31,16 @@ boton_menos = Button(root, text="-", width=9, height=3, bg="deep sky blue", fg="
 boton_multiplicacion = Button(root, text="*",  width=9, height=3, bg="deep sky blue", fg="black", borderwidth=0, cursor="hand2").grid(row=3, column=3, padx=1, pady=1)
 boton_division = Button(root, text="/", width=9, height=3, bg="deep sky blue", fg="black", borderwidth=0, cursor="hand2").grid(row=4, column=3, padx=1, pady=1)
 
-def tecla(f):
-    global var 
-    var = var + str(f)
-    entrada.set(var)
+def click(evento):
+    actual = pantalla.get()
+    pantalla.delete(0, 'end')
+    pantalla.insert('end', str(actual) + str(evento.widget["text"]))
 
-def result():
-    global var
-    try:
-        a = (eval(var))
-        entrada.set(j)
-    except:
-        entrada.set("")
-    var = ""
-
-var = ""
-entrada = StringVar()
-
+def igual(evento):
+    calcular = pantalla.get()
+    resultado = eval(calcular)
+    pantalla.delete(0, 'end')
+    pantalla.insert('end', str(resultado))
+    
 
 root.mainloop()
