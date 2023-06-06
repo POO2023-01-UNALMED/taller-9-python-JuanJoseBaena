@@ -8,7 +8,7 @@ root.geometry("400x300")
 
 # Configuración pantalla de salida 
 pantalla = Entry(root, width=40, bg="black", fg="white", borderwidth=0, font=("arial", 18, "bold"))
-pantalla.grid(row=0, column=0, columnspan=4, padx=1, pady=0)
+pantalla.grid(row=0, column=0, columnspan=22, padx=1, pady=0)
 
 #label = Label (pantalla, width = 41, height = 2, bg = "black", fg = "white", borderwidth = 0, textvariable = entrada)
 #label.grid(row = 0, column = 0)
